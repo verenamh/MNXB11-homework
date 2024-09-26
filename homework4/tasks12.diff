@@ -1,0 +1,92 @@
+Only in /home/verenamh: .apptainer
+Only in /home/verenamh: .bash_history
+diff -y /etc/skel/.bash_logout /home/verenamh/.bash_logout
+# ~/.bash_logout						# ~/.bash_logout
+
+Only in /home/verenamh: .bash_logout~
+diff -y /etc/skel/.bash_profile /home/verenamh/.bash_profile
+# .bash_profile							# .bash_profile
+
+# Get the aliases and functions					# Get the aliases and functions
+if [ -f ~/.bashrc ]; then					if [ -f ~/.bashrc ]; then
+	. ~/.bashrc							. ~/.bashrc
+fi								fi
+
+# User specific environment and startup programs		# User specific environment and startup programs
+Only in /home/verenamh: .bash_profile~
+diff -y /etc/skel/.bashrc /home/verenamh/.bashrc
+# .bashrc							# .bashrc
+
+# Source global definitions					# Source global definitions
+if [ -f /etc/bashrc ]; then					if [ -f /etc/bashrc ]; then
+	. /etc/bashrc							. /etc/bashrc
+fi								fi
+
+# User specific environment					# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]		if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then								then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"			    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi								fi
+export PATH							export PATH
+
+							      >	export PATH="/projects/hep/fs10/mnxb11/bin:$PATH"
+							      >
+# Uncomment the following line if you don't like systemctl's 	# Uncomment the following line if you don't like systemctl's 
+# export SYSTEMD_PAGER=						# export SYSTEMD_PAGER=
+
+# User specific aliases and functions				# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then					if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do					for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then						if [ -f "$rc" ]; then
+			. "$rc"								. "$rc"
+		fi								fi
+	done								done
+fi								fi
+
+unset rc							unset rc
+Only in /home/verenamh: .bashrc~
+Only in /home/verenamh: .cache
+Only in /home/verenamh: .config
+Only in /home/verenamh: Desktop
+Only in /home/verenamh: Documents
+Only in /home/verenamh: Downloads
+diff -y /etc/skel/.emacs /home/verenamh/.emacs
+;; .emacs							;; .emacs
+
+(custom-set-variables						(custom-set-variables
+ ;; uncomment to always end a file with a newline		 ;; uncomment to always end a file with a newline
+ ;'(require-final-newline t)					 ;'(require-final-newline t)
+ ;; uncomment to disable loading of "default.el" at startup	 ;; uncomment to disable loading of "default.el" at startup
+ ;'(inhibit-default-init t)					 ;'(inhibit-default-init t)
+ ;; default to unified diffs					 ;; default to unified diffs
+ '(diff-switches "-u"))						 '(diff-switches "-u"))
+
+;;; uncomment for CJK utf-8 support for non-Asian users		;;; uncomment for CJK utf-8 support for non-Asian users
+;; (require 'un-define)						;; (require 'un-define)
+Only in /home/verenamh: .emacs.d
+Only in /home/verenamh: Exercises
+Only in /home/verenamh: git
+Only in /home/verenamh: .gitconfig
+Only in /etc/skel/: .kshrc
+Only in /home/verenamh: .lesshst
+Only in /home/verenamh: .local
+Only in /home/verenamh: MNXB11-homework
+Common subdirectories: /etc/skel/.mozilla and /home/verenamh/.mozilla
+Only in /home/verenamh: Music
+Only in /home/verenamh: .nv
+Only in /home/verenamh: Pictures
+Only in /home/verenamh: .pki
+Only in /home/verenamh: Public
+Only in /home/verenamh: .ssh
+Only in /home/verenamh: Templates
+Only in /home/verenamh: test file for Homework 1.txt
+Only in /home/verenamh: testfileforHomework 1.txt
+Only in /home/verenamh: TOP-MNXB11
+Only in /home/verenamh: Tutorial
+Only in /home/verenamh: Tutorials
+Only in /home/verenamh: verenamh_homework3
+Only in /home/verenamh: verenamh_homework3 (1)
+Only in /home/verenamh: verenamh_homework3.tgz
+Only in /home/verenamh: Videos
+Only in /home/verenamh: .vscode
+Only in /etc/skel/: .zshrc
