@@ -9,6 +9,10 @@ int checksum(std::string input) {
   return sum;
 }
 
+int calckey(int sum, char char1_arg1, std::size_t filename_len){
+  return (sum ^ char1_arg1 * 3) << (filename_len & 0x1f);
+}
+
 int main(int arg_count, char *arg_list[]) 
 {
   if (arg_count == 3) {
@@ -16,9 +20,18 @@ int main(int arg_count, char *arg_list[])
     auto char1_arg1{*(arg_list[1])}; 
     auto filename_len{filename.size()};
     auto int_number_arg2{std::atoi(arg_list[2])};
-    //auto var6{0};
-    //auto var7{0}; //this is just an index
     std::string arg1{arg_list[1]};
+
+  int sum = checksum(arg_list[1]);
+  int key = calckey(sum, char1_arg1, filename_len);
+
+  if (key == int_number_arg2) {
+    std::cout << "Correct!" << std::endl;
+  } else {
+    std::cout << "Wrong!" << std::endl;
+  }
+  }
+}
 
 //var2 = filename
 //var3 = stores the first character of arg1=MNXB11, thus it is M
@@ -27,14 +40,4 @@ int main(int arg_count, char *arg_list[])
 //var6 = sum of the ASCII values of MNXB11 (each letter has a ASCII number corresponding to it), renamed to sum
 //var7 = index that goes through MNXB11, not needed anymore
 //var8 = is again the MNXB11, saved as string
-
-  int sum = checksum(arg_list[1]);
-
-  if ((sum ^ char1_arg1 * 3) << (filename_len & 0x1f) == int_number_arg2) {
-    std::cout << "Correct!" << std::endl;
-  } else {
-    std::cout << "Wrong!" << std::endl;
-  }
-  }
-}
 
