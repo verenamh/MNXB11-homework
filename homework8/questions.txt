@@ -1,0 +1,26 @@
+Section 1.3
+
+1. The main difference between struct and class is that in class the members are private by default,
+    whereas for struct they are public. 
+
+2. Changed the name of the class to "homework" instead of "your_class"
+
+3. We need our class to be derived from the TObject because we need it for the TTree structure later,
+     as the TObject allows us to store information from the class in root files which we can access later.
+
+4. Class compiles without errors if the code looks like this (remove semicolons and add if members are included):
+        #include <homework.h>
+        ClassImp(homework)
+
+
+        homework::homework() 
+        {   
+        }
+
+        homework::homework(Int_t variable) 
+        {
+        }
+
+        homework::~homework(){
+
+        }
